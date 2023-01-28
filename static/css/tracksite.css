@@ -1,0 +1,180 @@
+body{
+	font-family: cursive;
+	
+}
+
+#banner{
+	background: url(../images/Logo.png);
+	background-size: 220px 120px;
+	background-repeat: repeat-x;
+	background-repeat: space;
+	width:1680px;
+	height: 155px;
+	text-align: left;
+	margin-left: 0px;
+	background-position:bottom;
+	padding:0px;
+}
+
+#banner h1,h2{
+	margin-left: 10px;
+}
+
+#banner h1{
+	font-size: 26px;
+	
+}
+#banner h2{
+	padding-top: 95px;
+}
+
+h4{
+	color:red;
+	margin-top: 12px;
+	margin-bottom: 5px;
+}
+
+.wrapper{
+	background-image: url(../images/Trackbackground.png);
+	background-size:cover;
+	width:1810px;
+	height:1079px;
+	text-align: center;
+	margin-top:0px;
+	margin-left:-120px;	
+}
+.wrapper h1{
+	padding-top:140px;
+	padding-left:125px;
+	font-size:35px;
+	color:white;
+}
+#calcu{
+	border-radius: 20px;
+	width:625px;
+	height:385px;
+	margin-left:650px;
+	background-color:#F0F0F0;
+	padding-top:20px;
+	font-size:20px;
+	box-shadow: 5px 5px #888888;
+}
+#title {
+	margin-top:-20px;
+}
+#calculate{
+	font-size:20px;
+	border-radius:10px;
+}
+optgroup{
+	font-size:20px;
+}
+
+
+.wrapper p{ 
+color: white;
+bottom:10px;
+}
+#description{
+	color: blue;
+	width:625px;
+	height:200px;
+	font-size:20px;
+	margin-left:652px;
+}
+#footer{
+	width: 1000px;
+	height: 50px;
+	background-color: ;
+	font-size: 20px;
+	margin-top: 200px;
+	margin-left:80px;
+}
+#footer a{
+	color:white;
+}
+
+
+/* always put media queries at the end of css file*/
+@media screen and (min-width: 400px) { /* For devices larger than 400px */
+.container {
+  width: 80%;
+  padding: 0;
+ }
+}
+ @media screen and (min-width: 550px) { /* For devices larger than 550px */
+ .container {
+  width: 90%;
+ }
+}
+
+/* Not Used Yet*/
+.container {
+	position: relative;
+	width: 100%;
+	margin: 10px auto 25px;
+	padding: 0 20px;
+	max-width: 1024px;
+	box-sizing: border-box;
+}
+.row {
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+.column,
+.columns {
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+.full-width {
+    width: 100%;
+}
+
+
+	.column,
+	.columns {
+	margin-left: 4%;
+	padding: 4px;
+	}
+	.column:first-child,
+	.columns:first-child {
+	margin-left: 0;
+	}
+ 	.one.column {
+			width: 13.3333333333%;
+		}
+		.two.columns {
+			width: 30.6666666667%;
+		}
+		.three.columns {
+			width: 48%;
+		}
+		.four.columns {
+			width: 65.3333333333%;
+		}
+		.five.columns {
+			width: 82.6666666667%;
+		}
+		.six.columns {
+			width: 100%;
+		}
+		.half.column {
+			width: 48%;
+		}
+		.third.column {
+			width: 30.6666666667%;
+		}
+		.two-thirds.column {
+			width: 65.3333333333%;
+		}
+}
+ /* Clearing
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.container:after,
+.row:after {
+ content: "";
+ display: table;
+ clear: both; 
+}
+
