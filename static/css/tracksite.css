@@ -1,5 +1,8 @@
 body{
 	font-family: Georgia, serif;
+	width: 1024px;
+	height: 100%;
+	margin:0;
 	
 }
 
@@ -25,7 +28,7 @@ body{
 	
 }
 #banner h2{
-	padding-top: 95px;
+	padding-top: 105px;
 }
 
 h4{
@@ -83,12 +86,12 @@ bottom:10px;
 	margin-left:652px;
 }
 #footer{
-	width: 1000px;
+	width: 1024px;
 	height: 50px;
 	background-color: ;
 	font-size: 20px;
 	margin-top: 200px;
-	margin-left:80px;
+	margin-left:150px;
 }
 #footer a{
 	color:white;
@@ -108,7 +111,6 @@ bottom:10px;
  }
 }
 
-/* Not Used Yet*/
 .container {
 	position: relative;
 	width: 100%;
@@ -117,7 +119,8 @@ bottom:10px;
 	max-width: 1024px;
 	box-sizing: border-box;
 }
-.row {
+/* Not Used Yet*/
+/*.row {
 	box-sizing: border-box;
 	margin-bottom: 10px;
 }
@@ -171,10 +174,11 @@ bottom:10px;
 }
  /* Clearing
 ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/*
 .container:after,
 .row:after {
  content: "";
  display: table;
  clear: both; 
 }
-
+*/
