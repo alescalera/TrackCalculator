@@ -12,7 +12,12 @@ from new_calculator import alt_calc
 @app.route('/')
 def home():
 	return render_template('index.html')
-	
+@app.route('/about/')
+def about():
+    return render_template('about.html')    
+@app.route('/contact/')
+def contact():
+    return render_template('contact.html')		
 @app.route('/',methods=['POST'])
 def predict():
 	
@@ -35,7 +40,6 @@ def predict():
     sentence =  "at a prediction elevation of " + str(Prediction_Elevation) +" "+ Units + " for a " + str(Sex) + " completing the " + str(Event) + " in " + str(Hours) + ":"+ str(Minutes).zfill(2)+":"+ ('{0:05.2f}'.format(Seconds)) + " at " + str(Elevation) + " " + (Units)
 	
     return render_template('index.html',Prediction=result,Phrase=sentence)
-    
-	
+
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=3000)
