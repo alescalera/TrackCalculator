@@ -9,12 +9,11 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
 	<link rel="manifest" href="/static/icons/site.webmanifest">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta "description" content="The World's First Race Prediction Calculator For Different Elevations">
-	<meta name="keywords" content="race prediction, altitude race converter, running calculator, altitude race prediction calculator,
-	,sea level race prediction, track calculator, NCAA conversion calculator, race converter">
-	<meta name="author" content="Albaro Escalera">
+
+<meta "description" content="The World's First Race Prediction Calculator For Different Elevations">
+<meta name="keywords" content="race prediction, altitude race converter, running calculator, altitude race prediction calculator,
+,sea level race prediction, track calculator, NCAA conversion calculator, race converter">
+<meta name="author" content="Al Escalera">
 <!-- notes* id is for css name is for server-->
 <style>
 
@@ -39,30 +38,27 @@
             border: 2px solid black;
         }
  </style>
- 
 <title> Track Calculator </title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6792441924078951"
      crossorigin="anonymous"></script>
 </head>
 <body>
+<!--<div class="container">-->
+<div id="banner">
 
-	<!--<div class="row"> <!-- everything in body should be in under "row" class-->
-		<div class="menu"><!--beginning of menu-->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div><!--end of menu-->
-		
-
-<h1> How fast can you race at different elevations?</h1>
+	<h1> Welcome to TrackCalculator.com </h1>
+	<h2> The World's Best Predictor for Track Races at Different Elevations!</h2>
 	
-	<div class ="calcu"><!--beginning of calculator-->
+		
+</div>
+
+	<div class="wrapper">
+	<h1> How fast can you race at different elevations?</h1>
+	<div id ="calcu">
 	<div id ="title"><h3> Altitude Performance Conversion Calculator</h3></div>
 	
 
-		<form action="{{ url_for('predict') }}" method= "post" >
+	<form action="{{ url_for('predict') }}" method= "post" >
 		<label for="Sex"> Sex:</label>
 		<select name="Sex" id="Sex" required>
 			<optgroup>
@@ -86,12 +82,12 @@
 			
 			</select><br><br>
 			</optgroup>
-		<label for="Hours">Race time Hours:</label>
+		<label for="Hours">Your race time Hours:</label>
 		<input type="number" id="Hours"  name="Hours" value= "0" min="0" max="59" required="required">
 		<label for="Minutes">Minutes:</label>
 		<input type="number" id="Minutes" name="Minutes" min="0" max="59" required="required">
 		<label for="Seconds">Seconds:</label>
-		<input type="number" step="0.01" id="Seconds" name="Seconds" min="0" max="59.99" required="required" ><br><br>
+		<input type="number" step="0.01" id="Seconds" name="Seconds" min="0" max="59" required="required" ><br><br>
 
 		<label for="Elevation">Ran at an elevation of:</label>
 		<input type="number" id="Elevation"  name="Elevation" min="1" required="required">
@@ -110,33 +106,66 @@
 
 		
 		<input type="submit" id="calculate" value="Calculate"/>
-<!-- if the prediction output does not work, place it outside the </form> element-->
+
+	</form>
+		
+		<!-- new row on calculator-->
+		
 		<label for="Predicted Time"><h4>Predicted Time of:</label>
 		{{Prediction}}</h4>
-		{{Phrase}}
-		</form>
 		
+		{{Phrase}}
 		
 	</div><!-- closes calculator-->
-	<div id="Logo"> 
-
-	</div>
 	
-	<div id="footer">
-			<hr>
-		<footer>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li> 
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-			<p> © 2023 Track Calculator. All rights reserved. 
 
-			</p>
-		</footer>
-    </div> <!-- closes footer id-->
-      
+	<div id="description">
+	<p> The altitude performance conversion calculator was developed by researchers from Indiana University as part of a dissertation project in collaboration with the NCAA and DirectAthletics
+	 using the TFRRS database.We combined the indoor track and field results
+	 database with geographical survey data to establish competition elevations. By
+	observing the performance changes of each athlete within a given NCAA indoor track season we
+	were able to model the percent change from sea level (1-150m) for each event (800m-5,000m) for males and females and extrapolate the pattern to longer events using physiological principals.</p>
+	</div><!-- closes description box-->
+	
+	<div id=footer>
+	<p>Author: Albaro Escalera &nbsp;&nbsp;&nbsp;      
+	<a href="mailto:alescalera@trackcalculator.com">alescalera@trackcalculator.com</a>&nbsp;&nbsp;&nbsp;      
+	Background Image Credit: City of South Lake Tahoe</p>
+	</div><!-- closes footer-->
+	
+</div><!-- closes wrapper-->
+
+<!--</div>--><!--closes container-->     
+<!--Ad Left of Screen-->
+<div align="Left">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6792441924078951"
+		 crossorigin="anonymous"></script>
+	<!-- Left Square -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-6792441924078951"
+		 data-ad-slot="4921953338"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</div><!--end of left ad-->
+	<!--Ad Right of Screen-->   
+	<div align="Right">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6792441924078951"
+		 crossorigin="anonymous"></script>
+	<!-- Right Square -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-6792441924078951"
+		 data-ad-slot="1060112835"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>      
+	</div> <!--end of right ad-->       
 </body>
 
 </html>
-
