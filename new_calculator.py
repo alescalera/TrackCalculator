@@ -8,7 +8,6 @@ def alt_calc(Sex, Event, Hours, Minutes, Seconds, Elevation, Units, Prediction_E
         
         isec, fsec = divmod(round(racetime*100), 100)
         racetime="{}.{:02.0f}".format(timedelta(seconds=isec), fsec)
-        racetime= racetime.lstrip("0,:")
         #racetime= racetime.round(freq='milliseconds')
         #racetime=str(racetime)
         #racetime= ("{:.2f}".format(racetime))

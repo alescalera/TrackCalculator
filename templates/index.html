@@ -20,7 +20,7 @@
 	<link rel="manifest" href="/static/icons/site.webmanifest">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="The World's First Race Prediction Calculator For Different Elevations">
+	<meta "description" content="The World's First Race Prediction Calculator For Different Elevations">
 	<meta name="keywords" content="race prediction, altitude race converter, running calculator, altitude race prediction calculator,
 	,sea level race prediction, track calculator, NCAA conversion calculator, race converter">
 	<meta name="author" content="Albaro Escalera">
@@ -50,19 +50,17 @@
  </style>
  
 <title> Track Calculator </title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2062614895203105"
      crossorigin="anonymous"></script>
 </head>
 <body>
 
-	
+	<!--<div class="row"> <!-- everything in body should be in under "row" class-->
 		<div class="menu"><!--beginning of menu-->
             <ul>
                 <li><a href="{{url_for ('home')}}">Home</a></li>
                 <li><a href="{{url_for ('about')}}">About</a></li>
                 <li><a href="{{url_for ('contact')}}">Contact</a></li>
-				<!--<li><a href="{{url_for ('splits')}}">Splits</a></li>-->
             </ul>
         </div><!--end of menu-->
 		
@@ -71,18 +69,19 @@
 	
 	<div class ="calcu"><!--beginning of calculator-->
 	<div id ="title"><h3> Altitude Performance Conversion Calculator</h3></div>
+	
 
-		<form class="form-inline" >
+		<form action="{{ url_for('predict') }}" method= "post" >
 		<label for="Sex"> Sex:</label>
 		<select name="Sex" id="Sex" required>
 			<optgroup>
-				<!--<option value="none" selected disabled hidden>Select an Option</option>-->
-				<option value ="Male">Male</option>
-				<option 
-				value="Female">Female</option>
-				</select>
-				</optgroup>
-		<label for="Event"> Event:</label>
+			<!--<option value="none" selected disabled hidden>Select an Option</option>-->
+			<option value ="Male">Male</option>
+			<option 
+			value="Female">Female</option>
+			</select>
+			</optgroup>
+		<label for "Event"> Event:</label>
 		<select name="Event" id = "Event" required>
 			<optgroup>
 			<!--<option value="none" selected disabled hidden>Select an Option</option>-->
@@ -118,17 +117,15 @@
 		<input type="number" id="Prediction_Elevation"  name="Prediction_Elevation" min="1" required="required">
 
 
-		<input type="submit" id="calculate" value="Calculate"/>
-		<!--<button type="submit" >Calculate</button>-->
 		
+		<input type="submit" id="calculate" value="Calculate"/>
 <!-- if the prediction output does not work, place it outside the </form> element-->
-<h4>	<div id="prediction">Predicted Time of: </div>
-			
-</h4>
-		<div id="sentence"></div>
+		<label for="Predicted Time"><h4>Predicted Time of:</label>
+		{{Prediction}}</h4>
+		{{Phrase}}
 		</form>
-
-
+		
+		
 	</div><!-- closes calculator-->
 	<div id="Logo"> 
 
@@ -141,45 +138,13 @@
                 <li><a href="{{url_for ('home')}}">Home</a></li>
                 <li><a href="{{url_for ('about')}}">About</a></li>
                 <li><a href="{{url_for ('contact')}}">Contact</a></li>
-				<!--<li><a href="{{url_for ('splits')}}">Splits</a></li>-->
 			</ul>
 			<p> © 2023 Track Calculator. All rights reserved. 
 
 			</p>
 		</footer>
     </div> <!-- closes footer id-->
-
+      
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script type="text/javascript"> 
-$(document).ready(function() {
-	$('form').on('submit',function(event) {
-      $.ajax({
-        data:{
-          Sex : $("#Sex").val(),
-		  Event : $("#Event").val(),
-		  Hours : $("#Hours").val(),
-		  Minutes : $("#Minutes").val(),
-		  Seconds : $("#Seconds").val(),
-		  Elevation : $("#Elevation").val(),
-		  Units : $("#Units").val(),
-		  Prediction_Elevation : $("#Prediction_Elevation").val(),
-        },
-		type:'POST',
-        url:"{{ url_for('predict') }}",
-    	})//closes ajax function
-	.done(function(response){
-   	   $('#prediction').text(response.prediction).show();
-	   $('#sentence').text(response.sentence).show();
-	});
-	event.preventDefault();
-  	});
 
-});//closes document submit function
-
-
-
-</script>
-
- 
 </html>
