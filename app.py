@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template,json
 
 #Create the app object
 app = Flask(__name__)
@@ -6,9 +6,10 @@ app = Flask(__name__)
 #importing function for calculations
 import datetime
 from new_calculator import alt_calc
+from split_calculator import split_calc
 
 
-#Define calculator
+#Define routes for webpages
 @app.route('/')
 def home():
 	return render_template('index.html')
@@ -17,29 +18,48 @@ def about():
     return render_template('about.html')    
 @app.route('/contact/')
 def contact():
-    return render_template('contact.html')		
+    return render_template('contact.html')	
+@app.route('/splits/')
+def splits():
+    return render_template('splits.html')	
+#Define altitude calculator	route
 @app.route('/',methods=['POST'])
+#Define altitude calculator
 def predict():
-	
-    Sex = request.form['Sex']
     
-    Event = request.form['Event']
-    
+    Sex = request.form.get('Sex')    
+    Event = request.form.get('Event')
     Hours = request.form.get('Hours',type=int)
-    
-    Minutes = request.form.get('Minutes',type=int)
-    
+    Minutes = request.form.get('Minutes',type=int)        
     Seconds = request.form.get('Seconds', type=float)
-    
     Elevation = request.form.get('Elevation',type=int)
-    
     Units = request.form.get('Units',type=str)
-    
     Prediction_Elevation = request.form.get('Prediction_Elevation',type=int)
-    result=alt_calc(Sex,Event,Hours,Minutes,Seconds,Elevation,Units,Prediction_Elevation)
-    sentence =  "at a prediction elevation of " + str(Prediction_Elevation) +" "+ Units + " for a " + str(Sex) + " completing the " + str(Event) + " in " + str(Hours) + ":"+ str(Minutes).zfill(2)+":"+ ('{0:05.2f}'.format(Seconds)) + " at " + str(Elevation) + " " + (Units)
-	
-    return render_template('index.html',Prediction=result,Phrase=sentence)
+    prediction =alt_calc(Sex,Event,Hours,Minutes,Seconds,Elevation,Units,Prediction_Elevation)
+    input_time=str(str(Hours) + ":"+ str(Minutes).zfill(2)+":"+ ('{0:05.2f}'.format(Seconds)) + " at " + str(Elevation) + " " + (Units))
+    input_time= input_time.lstrip('0,:')
+    sentence = " at a prediction elevation of " + str(Prediction_Elevation) +" "+ Units + " for a " + str(Sex) + " completing the " + str(Event) + " in " + input_time
+    print(sentence, type(sentence))
+    if prediction and sentence:
+        response= jsonify({'prediction':'Predicted Time of : '+ prediction, 'sentence':sentence})
+        return response
+    return jsonify({'error': 'Missing data!'})
+    
+   
 
+
+@app.route('/Splits/',methods=['POST'])
+def splitsform():
+     Hours=request.form.get('Hours',type=int)
+     Minutes=request.form.get('Minutes',type=int)
+     Seconds=request.form.get('Seconds', type=float)
+     Race_Distance= request.form.get('Race_Distance', type=float)
+     Race_Units= request.form.get('Race_Units',type=str)
+     Split_Distance=request.form.get('Split_Distance', type=float)
+     Split_Units=request.form.get('Split_Units',type=str)
+     splitresult=split_calc(Hours,Minutes,Seconds,Race_Distance,Race_Units,Split_Distance,Split_Units)
+     splitsentence= "for a split distance of " + str(Split_Distance) +" "+ str(Split_Units)
+     
+     return render_template(Split=splitresult,Split_Phrase=splitsentence)
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=3000)
