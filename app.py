@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template,json
+from flask import Flask, request, jsonify, render_template,json, send_from_directory
 
 #Create the app object
 app = Flask(__name__)
@@ -8,6 +8,10 @@ import datetime
 from new_calculator import alt_calc
 #from split_calculator import split_calc
 
+#Define route for google ads.txt file
+@app.route("/ads.txt")
+def robots():
+    return send_from_directory("static", "ads.txt")
 
 #Define routes for webpages
 @app.route('/')
