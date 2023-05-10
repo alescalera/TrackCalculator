@@ -94,9 +94,15 @@ form, #title{
 input[type=number]{
 	width:10%;
 }
+#Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
+#Race_Distance,#Split_Distance
+{
+	width: 10%;
+	font-size:2.5vh;
+}
 
 label{
-	//*display: inline-table ;*//
+	/*display: inline-table ;*/
 	padding: 0.5%;
 }
 
@@ -106,10 +112,7 @@ label{
 	border-radius:1.5vh;
 	padding:0.5vh;
 }
-select[id="Event"]{
-	width: 20%;
-	font-size:2.5vh;
-}
+
 
 h4{
 	color:red;
@@ -281,6 +284,13 @@ form, #title{
 	color:white;
 	border-radius: 2.5vh;
 }
+
+#Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
+#Race_Distance,#Split_Distance
+{
+	width: 15%;
+	font-size:2.5vh;
+}
 #Logo{
 	background: url(../images/Logo.png);
 	background-size: contain;
@@ -359,9 +369,15 @@ form, #title{
 
 	padding: 0.5%;
 	margin-top: 3%;
-	margin-left: 10%;
+	margin-left: 5%;
 	color:white;
 	border-radius: 2.5vh;
+}
+#Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
+#Race_Distance,#Split_Distance
+{
+	width: 20%;
+	font-size:2.5vh;
 }
 /*
 input, label {
