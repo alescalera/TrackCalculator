@@ -56,7 +56,7 @@ a:active { text-decoration: none; }
 .menu a {
 
 	position: relative;
-	left:42.5vw;
+	left:39.5vw;
 	padding: 1%;
   	color: white;
 }
@@ -94,22 +94,32 @@ form, #title{
 input[type=number]{
 	width:10%;
 }
-label {
-	display: inline-table ;
+
+label{
+	//*display: inline-table ;*//
 	padding: 0.5%;
 }
+
 #calculate{
 	background-color: #62DCE7;
 	font-size:2.5vh;
 	border-radius:1.5vh;
 	padding:0.5vh;
 }
-optgroup{
+select[id="Event"]{
+	width: 20%;
 	font-size:2.5vh;
 }
 
 h4{
 	color:red;
+}
+#rawJsonDiv{
+	color:red;
+	position:relative;
+	display: inline-block;
+	text-align:center;
+	font-size:20vh;
 }
 /* About webpage*/
 .about{
@@ -225,7 +235,7 @@ footer a::after {
 	transform: scaleX(1);
 	transform-origin: bottom left;
   }
-
+/**************************TABLETS***************************************************/
 @media only screen and (max-width: 992px) {
   /* For tablets: */
   
@@ -237,7 +247,7 @@ footer a::after {
   .menu a {
 
 	position: relative;
-	left:38vw;
+	left:30vw;
 	padding: 1%;
   	color: white;
 }
@@ -263,13 +273,21 @@ footer a::after {
 	font-size: 2.5vh;
 
 }
+form, #title{
+
+	padding: 0.5%;
+	margin-top: 3%;
+	margin-left: 30%;
+	color:white;
+	border-radius: 2.5vh;
+}
 #Logo{
 	background: url(../images/Logo.png);
 	background-size: contain;
 	height:12vh;
 	width:30vw;
 	background-repeat: no-repeat;
-	margin-left: 39vw;
+	margin-left: 44vw;
 	margin-top: 2%;
 	margin-bottom: 2%;
 	
@@ -280,7 +298,7 @@ footer a::after {
 	height:12vh;
 	width:30vw;
 	background-repeat: no-repeat;
-	margin-left: 39vw;
+	margin: auto;
 	margin-top: 2%;
 	margin-bottom: 2%;
 	
@@ -307,6 +325,8 @@ margin-right: auto;
 
 }
 }
+/**************************PHONES***************************************************/
+
 
 @media screen and (max-width: 600px) {
 	/* For phones: */
@@ -335,13 +355,25 @@ margin-right: auto;
 	font-size: 2.5vh;
 
 }
+form, #title{
+
+	padding: 0.5%;
+	margin-top: 3%;
+	margin-left: 10%;
+	color:white;
+	border-radius: 2.5vh;
+}
+/*
+input, label {
+    display:block;
+}*/
   #Logo{
 	background: url(../images/Logo.png);
 	background-size: contain;
 	height:12vh;
 	width:30vw;
 	background-repeat: no-repeat;
-	margin-left: 34vw;
+	margin:auto;
 	margin-top: 2%;
 	margin-bottom: 2%;
 	

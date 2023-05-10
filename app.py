@@ -6,7 +6,7 @@ app = Flask(__name__)
 #importing function for calculations
 import datetime
 from new_calculator import alt_calc
-#from split_calculator import split_calc
+from split_calculator import split_calc
 
 #Define route for google ads.txt file
 @app.route("/ads.txt")
@@ -62,8 +62,12 @@ def splitsform():
      Split_Distance=request.form.get('Split_Distance', type=float)
      Split_Units=request.form.get('Split_Units',type=str)
      splitresult=split_calc(Hours,Minutes,Seconds,Race_Distance,Race_Units,Split_Distance,Split_Units)
-     splitsentence= "for a split distance of " + str(Split_Distance) +" "+ str(Split_Units)
-     
-     return render_template(Split=splitresult,Split_Phrase=splitsentence)
+     splitsentence= "per " + str(Split_Distance) +" "+ str(Split_Units)
+     print(splitresult)
+     print(splitsentence)
+     if splitresult and splitsentence:
+        response= jsonify({'split': splitresult, 'splitphrase': splitsentence})
+        return response
+     return jsonify({'error': 'Missing data!'})
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=3000)
