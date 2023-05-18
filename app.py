@@ -45,7 +45,7 @@ def predict():
     sentence = " at a prediction elevation of " + str(Prediction_Elevation) +" "+ Units + " for a " + str(Sex) + " completing the " + str(Event) + " in " + input_time
     print(sentence, type(sentence))
     if prediction and sentence:
-        response= jsonify({'prediction':'Predicted Time of : '+ prediction, 'sentence':sentence})
+        response= jsonify({'prediction':'Predicted Time of  '+ prediction, 'sentence':sentence})
         return response
     return jsonify({'error': 'Missing data!'})
     
