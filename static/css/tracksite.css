@@ -56,7 +56,7 @@ a:active { text-decoration: none; }
 .menu a {
 
 	position: relative;
-	left:39.5vw;
+	left:38vw;
 	padding: 1%;
   	color: white;
 }
@@ -75,6 +75,9 @@ form, #title{
 	border-radius: 2.5vh;
 }
 
+#title{
+	color:#62DCE7;
+}
 .calcu{
 
 	background-image: url(../images/1968Track.jpg);
@@ -115,7 +118,7 @@ label{
 
 
 h4{
-	color:red;
+	color:#62DCE7;
 }
 #rawJsonDiv{
 	color:red;
