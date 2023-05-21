@@ -10,8 +10,18 @@ from split_calculator import split_calc
 
 #Define route for google ads.txt file
 @app.route("/ads.txt")
-def robots():
+def ads():
     return send_from_directory("static", "ads.txt")
+
+#Define route for robots.txt file
+@app.route("/robots.txt")
+def robots():
+    return send_from_directory("static", "robots.txt")
+
+#Define route for sitemap.txt file
+@app.route("/sitemap.txt")
+def robots():
+    return send_from_directory("static", "sitemap.txt")
 
 #Define routes for webpages
 @app.route('/')
