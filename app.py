@@ -22,6 +22,11 @@ def robots():
 @app.route("/sitemap.txt")
 def sitemap():
     return send_from_directory("static", "sitemap.txt")
+    
+#Define route for sitemap.txt file
+@app.route("/sitemap.txt/")
+def google():
+    return send_from_directory("static", "googleb8c14849d55df27a.html")
 
 #Define routes for webpages
 @app.route('/')
