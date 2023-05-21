@@ -26,7 +26,7 @@ def sitemap():
 #Define route for sitemap.txt file
 @app.route("/sitemap.txt/")
 def google():
-    return send_from_directory("static", "googleb8c14849d55df27a.html")
+    return send_from_directory("static", "google.txt")
 
 #Define routes for webpages
 @app.route('/')
