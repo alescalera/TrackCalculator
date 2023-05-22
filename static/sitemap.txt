@@ -1,7 +1,7 @@
-https://www.trackcalculator.com/index.html
-https://www.trackcalculator.com/splits.html
-https://www.trackcalculator.com/contact.html
-https://www.trackcalculator.com/about.html
+https://www.trackcalculator.com/index
+https://www.trackcalculator.com/splits
+https://www.trackcalculator.com/contact
+https://www.trackcalculator.com/about
 https://www.trackcalculator.com/ads.txt
 https://www.trackcalculator.com/robots.txt
 https://www.trackcalculator.com/sitemap.txt
