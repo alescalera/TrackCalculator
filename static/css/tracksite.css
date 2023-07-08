@@ -242,94 +242,7 @@ footer a::after {
 	transform-origin: bottom left;
   }
 
-/**************************PHONES***************************************************/
 
-
-@media screen and (max-width: 600px) {
-	/* For phones: */
- /* body {
-    background-color: olive;
-  }*/
- h3, #title{
-	color:#62DCE7 !important;
-}
- 
-   .menu a {
-
-	position: relative;
-	left:21vw !important;
-	padding: 1%;
-  	color: white;
-}
-.calcu{
-
-	background-image: url(../images/1968Track.jpg);
-	background-size:cover;
-	margin-left: 4vw;
-	padding: 0.5%;
-	color:white;
-	padding-top: 10vh;
-	width: 90vw;
-	height: 75vh;
-	border-radius: 2.5vh;
-	font-size: 2.5vh;
-
-}
-form{
-
-	padding: 0.5%;
-	margin-top: 3%;
-	margin-left: 5%;
-	color:white;
-	border-radius: 2.5vh;
-}
-
-
-
-#Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
-#Race_Distance,#Split_Distance
-{
-	width: 20%;
-	font-size:2.5vh;
-}
-/*
-input, label {
-    display:block;
-}*/
-  #Logo{
-	background: url(../images/Logo.png);
-	background-size: contain;
-	height:12vh;
-	width:30vw;
-	background-repeat: no-repeat;
-	margin:auto;
-	margin-top: 2%;
-	margin-bottom: 2%;
-	
-}
-  #AboutLogo{
-	background: url(../images/Logo.png);
-	background-size: contain;
-	height:12vh;
-	width:30vw;
-	background-repeat: no-repeat;
-	margin-left: 34vw;
-	margin-top: 2%;
-	margin-bottom: 2%;
-	
-}
-  #ContactLogo{
-	background: url(../images/Logo.png);
-	background-size: contain;
-	height:12vh;
-	width:30vw;
-	background-repeat: no-repeat;
-	margin-left: 34vw;
-	margin-top: 23%;
-	margin-bottom: 2%;
-	
-}
-}
 
 /**************************TABLETS***************************************************/
 @media only screen and (max-width: 992px) {
@@ -434,4 +347,91 @@ margin-right: auto;
 }
 }
 
+	/**************************PHONES***************************************************/
+
+
+@media screen and (max-width: 600px) {
+	/* For phones: */
+ /* body {
+    background-color: olive;
+  }*/
+ h3, #title{
+	color:#62DCE7 !important;
+}
+ 
+   .menu a {
+
+	position: relative;
+	left:21vw !important;
+	padding: 1%;
+  	color: white;
+}
+.calcu{
+
+	background-image: url(../images/1968Track.jpg);
+	background-size:cover;
+	margin-left: 4vw;
+	padding: 0.5%;
+	color:white;
+	padding-top: 10vh;
+	width: 90vw;
+	height: 75vh;
+	border-radius: 2.5vh;
+	font-size: 2.5vh;
+
+}
+form{
+
+	padding: 0.5%;
+	margin-top: 3%;
+	margin-left: 5%;
+	color:white;
+	border-radius: 2.5vh;
+}
+
+
+
+#Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
+#Race_Distance,#Split_Distance
+{
+	width: 20%;
+	font-size:2.5vh;
+}
+/*
+input, label {
+    display:block;
+}*/
+  #Logo{
+	background: url(../images/Logo.png);
+	background-size: contain;
+	height:12vh;
+	width:30vw;
+	background-repeat: no-repeat;
+	margin:auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	
+}
+  #AboutLogo{
+	background: url(../images/Logo.png);
+	background-size: contain;
+	height:12vh;
+	width:30vw;
+	background-repeat: no-repeat;
+	margin-left: 34vw;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	
+}
+  #ContactLogo{
+	background: url(../images/Logo.png);
+	background-size: contain;
+	height:12vh;
+	width:30vw;
+	background-repeat: no-repeat;
+	margin-left: 34vw;
+	margin-top: 23%;
+	margin-bottom: 2%;
+	
+}
+}
