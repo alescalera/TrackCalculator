@@ -250,7 +250,10 @@ footer a::after {
  /* body {
     background-color: olive;
   }*/
-  
+ h3, #title{
+	color:#62DCE7 !important;
+}
+ 
    .menu a {
 
 	position: relative;
@@ -281,9 +284,7 @@ form{
 	border-radius: 2.5vh;
 }
 
-h3, #title,{
-	color:#62DCE7 !important;
-}
+
 
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
 #Race_Distance,#Split_Distance
