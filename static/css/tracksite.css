@@ -257,7 +257,7 @@ footer a::after {
    .menu a {
 
 	position: relative;
-	left:15vw;
+	left:21vw !important;
 	padding: 1%;
   	color: white;
 }
