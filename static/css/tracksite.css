@@ -343,7 +343,7 @@ input, label {
   .menu a {
 
 	position: relative;
-	left:29vw;
+	left:35vw;
 	padding: 1%;
   	color: white;
 }
@@ -374,7 +374,7 @@ form{
 
 	padding: 0.5%;
 	margin-top: 3%;
-	margin-left: 20%;
+	margin-left: 25%;
 	color:white;
 	border-radius: 2.5vh;
 }
