@@ -281,7 +281,7 @@ form{
 	border-radius: 2.5vh;
 }
 
-body, h3, #title,{
+h3, #title,{
 	color:#62DCE7 !important;
 }
 
@@ -377,7 +377,7 @@ form{
 	border-radius: 2.5vh;
 }
 
-body,#title, h3{
+#title, h3{
 	color:#62DCE7 !important;
 }
 
