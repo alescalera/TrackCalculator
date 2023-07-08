@@ -75,9 +75,7 @@ form, #title{
 	border-radius: 2.5vh;
 }
 
-#title{
-	color:#62DCE7;
-}
+
 .calcu{
 
 	background-image: url(../images/1968Track.jpg);
@@ -93,7 +91,9 @@ form, #title{
 
 }
 
-
+#title{
+	color:#62DCE7;
+}
 input[type=number]{
 	width:10%;
 }
