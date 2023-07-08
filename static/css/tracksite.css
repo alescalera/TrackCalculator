@@ -288,6 +288,10 @@ form, #title{
 	border-radius: 2.5vh;
 }
 
+#title{
+	color:#62DCE7;
+}
+
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
 #Race_Distance,#Split_Distance
 {
@@ -376,6 +380,11 @@ form, #title{
 	color:white;
 	border-radius: 2.5vh;
 }
+
+#title{
+	color:#62DCE7;
+}
+
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
 #Race_Distance,#Split_Distance
 {
