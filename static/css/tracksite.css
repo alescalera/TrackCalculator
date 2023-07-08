@@ -367,6 +367,7 @@ input, label {
 	height: 75vh;
 	border-radius: 2.5vh;
 	font-size: 2.5vh;
+	text-align: center;
 
 }
 form{
@@ -376,7 +377,6 @@ form{
 	margin-left: 30%;
 	color:white;
 	border-radius: 2.5vh;
-	text-align: center !important;
 }
 
 #title, h3{
