@@ -281,8 +281,8 @@ form{
 	border-radius: 2.5vh;
 }
 
-body, #title, h3{
-	color:#62DCE7;
+body, h3, #title,{
+	color:#62DCE7 !important;
 }
 
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
@@ -368,7 +368,7 @@ input, label {
 	font-size: 2.5vh;
 
 }
-form, #title{
+form{
 
 	padding: 0.5%;
 	margin-top: 3%;
@@ -377,8 +377,8 @@ form, #title{
 	border-radius: 2.5vh;
 }
 
-#title{
-	color:#62DCE7;
+body,#title, h3{
+	color:#62DCE7 !important;
 }
 
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
