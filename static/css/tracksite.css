@@ -95,7 +95,7 @@ form, #title{
 	color:#62DCE7;
 }
 input[type=number]{
-	height: 2%;
+	height: 10%;
 	width:10%;
 }
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
