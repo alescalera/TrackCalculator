@@ -15,9 +15,9 @@ html{
 
 /* for desktop*/
 
-/*body {
-  background-color: tan;
-}*/
+body {
+  background-color: white;
+}
 
 .menu {
 	background-color: #62DCE7;
@@ -56,34 +56,137 @@ a:active { text-decoration: none; }
 .menu a {
 
 	position: relative;
-	left:39.5vw;
+	left:32.0vw;
 	padding: 1%;
   	color: white;
 }
-h1{
-	text-align:center;
-	/*margin-left:34vw;*/
-	font-size: 1.5vw;
+/*Homepage buttons*/
+.feature-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Adjust this value as needed */
+    margin: 0 auto;
 }
 
+.feature-button-container a {
+    text-decoration: none;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.feature-button {
+    width: 100%;
+    height: 15vh;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.feature-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.feature-button span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#profile-button {
+    background-image: url(../images/runningman.png);
+    background-size: 60% 100%;
+    background-color: #62DCE7;
+}
+
+#splits-button {
+    background-image: url(../images/stopwatch.png);
+    background-size: 75% 100%;
+    background-color: #62DCE7;
+}
+
+#altitude-button {
+    background-image: url(../images/altitude_pic.png);
+    background-size: 75% 100%;
+    background-color: #62DCE7;
+}
+
+h1{
+	text-align: center;
+	font-size: 3vh;
+}
 
 form, #title{
 
 	padding: 0.5%;
 	margin-left: 20%;
-	color:white;
+	color:black;
 	border-radius: 2.5vh;
 }
 
+.fitnessprofile{
 
-.calcu{
+	background-image: url(../images/runningman.png);
+	background-color: #62DCE7;
+	background-size:50% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 0 auto;
+	padding: 0.5%;
+	text-align: center;
+	color:black;
+	padding-top: 1vh;
+	width: 50vw;
+	height: 51.85vh;
+	border-radius: 2.5vh;
+	font-size: 2.5vh;
 
-	background-image: url(../images/1968Track.jpg);
-	background-size:cover;
-	margin-left: 25vw;
+}
+
+.calcu_splits{
+
+	background-image: url(../images/stopwatch.png);
+	background-color: #62DCE7;
+	background-size:40% 50%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin: 0 auto;
 	padding: 0.5%;
 	color:white;
-	padding-top: 10vh;
+	padding-top: 7.85vh;
+	width: 50vw;
+	height: 45vh;
+	border-radius: 2.5vh;
+	font-size: 2.5vh;
+
+}
+.calcu_altitude{
+
+	background-image: url(../images/altitude_pic.png);
+	background-color: #62DCE7;
+	background-size:40% 50%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin: 0 auto;
+	padding: 0.5%;
+	color:white;
+	padding-top: 7.85vh;
 	width: 50vw;
 	height: 45vh;
 	border-radius: 2.5vh;
@@ -91,18 +194,23 @@ form, #title{
 
 }
 
-#title{
-	color:#62DCE7;
+
+#title,h3,h4
+{
+	color:black;
 }
+
 input[type=number]{
 	height: 2%;
-	width:10%;
+	width:5%;
 }
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
 #Race_Distance,#Split_Distance
 {
 	width: 10%;
 	font-size:2.5vh;
+	margin: 0 auto;
+
 }
 
 label{
@@ -111,16 +219,13 @@ label{
 }
 
 #calculate{
-	background-color: #62DCE7;
+	background-color: white;
 	font-size:2.5vh;
 	border-radius:1.5vh;
 	padding:0.5vh;
 }
 
 
-h4{
-	color:#62DCE7;
-}
 #rawJsonDiv{
 	color:red;
 	position:relative;
@@ -130,7 +235,7 @@ h4{
 }
 /* About webpage*/
 .about{
-font-size:6.5vh;
+font-size:3.5vh;
 display: inline-block;
 width:100vw;
 position:relative;
@@ -249,53 +354,78 @@ footer a::after {
 @media only screen and (max-width: 992px) {
   /* For tablets: */
   
-  body {
-	width:100vw;
-	max-width:100vw;
-   /* background-color: blue;*/
-  }
+
+ /* body {
+	background-color: blue;
+  }*/
   .menu a {
 
 	position: relative;
-	left:35vw;
+	left:25vw;
 	padding: 1%;
   	color: white;
 }
-  h1{
-	margin-left:auto;
-	margin-right:auto;
-	font-size: 3vw;
-	width:80vw;
-	text-align: center;
-}
 
-.calcu{
+	.fitnessprofile{
 
-	background-image: url(../images/1968Track.jpg);
-	background-size:cover;
-	margin-left: 3vw;
-	padding: 0.5%;
-	color:white;
-	padding-top: 10vh;
-	width: 90vw;
-	height: 75vh;
-	border-radius: 2.5vh;
-	font-size: 2.5vh;
+		background-image: url(../images/runningman.png);
+		background-color: #62DCE7;
+		background-size:50% 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		margin: 0 auto;
+		padding: 0.5%;
+		text-align: center;
+		color:black;
+		padding-top: 1vh;
+		width: 95vw;
+		height: 65vh;
+		border-radius: 2.5vh;
+		font-size: 2.5vh;
 	
+	}
+	.calcu_splits{
+	
+		background-image: url(../images/stopwatch.png);
+		background-size:40% 50%;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		padding: 0.5%;
+		color:white;
+		padding-top: 5vh;
+		padding-left: 1vh;
+		margin-left: 5vw;
+		width: 85vw;
+		height: 61vh;
+		border-radius: 2.5vh;
+		font-size: 2.5vh;
+	
+	
+	}
+	.calcu_altitude{
+	
+		background-image: url(../images/altitude_pic.png);
+		background-size:40% 50%;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		margin: 0 auto;
+		padding: 0.5%;
+		color:white;
+		padding-top: 5vh;
+		width: 95vw;
+		height: 61vh;
+		border-radius: 2.5vh;
+		font-size: 2.5vh;
+	}
 
-}
-form{
+	form, #title{
 
-	padding: 0.5%;
-	margin-top: 3%;
-	margin-left: 25%;
-	color:white;
-	border-radius: 2.5vh;
-}
+		padding: 0.5%;
+		margin-left: 20%;
+		color:black;
+		border-radius: 2.5vh;
+	}
 
-#title, h3{
-	color:#62DCE7 !important;
-}
 
 #Hours,#Minutes,#Seconds,#Elevation,#Prediction_Elevation,
 #Race_Distance,#Split_Distance
@@ -314,6 +444,15 @@ form{
 	margin-bottom: 2%;
 	
 }
+/* About webpage*/
+.about{
+	font-size:6.5vh;
+	display: inline-block;
+	width:100vw;
+	position:relative;
+	text-align:center;	
+	
+	}
 #AboutLogo{
 	background: url(../images/Logo.png);
 	background-size: contain;
@@ -353,40 +492,80 @@ margin-right: auto;
 
 @media screen and (max-width: 600px) {
 	/* For phones: */
- /* body {
+/*body {
     background-color: olive;
   }*/
- h3, #title{
-	color:#62DCE7 !important;
-}
- 
+
    .menu a {
 
 	position: relative;
-	left:21vw !important;
+	left:5vw !important;
 	padding: 1%;
   	color: white;
 }
-.calcu{
+.fitnessprofile{
 
-	background-image: url(../images/1968Track.jpg);
-	background-size:cover;
-	margin-left: 4vw;
+	background-image: url(../images/runningman.png);
+	background-color: #62DCE7;
+	background-size:50% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 0 auto;
 	padding: 0.5%;
-	color:white;
-	padding-top: 10vh;
-	width: 90vw;
-	height: 75vh;
+	text-align: center;
+	color:black;
+	padding-top: 1vh;
+	width: 95vw;
+	height: 65vh;
 	border-radius: 2.5vh;
 	font-size: 2.5vh;
 
+}
+.calcu_altitude{
+
+	background-image: url(../images/altitude_pic.png);
+	background-size:40% 50%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin-left: 1.75vw;
+	padding: 0.5%;
+	color:white;
+	padding-top: 5vh;
+	width: 95vw;
+	height: 61vh;
+	border-radius: 2.5vh;
+	font-size: 2.5vh;
+}
+.calcu_splits{
+
+	background-image: url(../images/stopwatch.png);
+	background-size:40% 50%;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding: 0.5%;
+	color:white;
+	padding-top: 5vh;
+	margin-left: 1.75vw;
+	width: 95vw;
+	height: 61vh;
+	border-radius: 2.5vh;
+	font-size: 2.5vh;
+
+
+}
+#title{
+
+	padding: 0.5%;
+	margin-left: 20%;
+	color:black;
+	border-radius: 2.5vh;
 }
 form{
 
 	padding: 0.5%;
 	margin-top: 3%;
 	margin-left: 5%;
-	color:white;
+	color:black;
 	border-radius: 2.5vh;
 }
 
@@ -398,10 +577,7 @@ form{
 	width: 20%;
 	font-size:2.5vh;
 }
-/*
-input, label {
-    display:block;
-}*/
+
   #Logo{
 	background: url(../images/Logo.png);
 	background-size: contain;

@@ -37,6 +37,13 @@ def contact():
 @app.route('/splits/')
 def splits():
     return render_template('splits.html')	
+@app.route('/altitude/')
+def altitude():
+    return render_template('altitude.html')	
+@app.route('/myfitnessprofile/')
+def myfitnessprofile():
+    return render_template('my_fitnessprofile.html')	
+
 #Define altitude calculator	route
 @app.route('/',methods=['POST'])
 #Define altitude calculator

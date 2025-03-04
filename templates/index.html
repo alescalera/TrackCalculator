@@ -41,78 +41,56 @@
 		<div class="menu"><!--beginning of menu-->
             <ul>
                 <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
                 <li><a href="{{url_for ('about')}}">About</a></li>
                 <li><a href="{{url_for ('contact')}}">Contact</a></li>
-				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				
             </ul>
         </div><!--end of menu-->
 		
 
-<h1> How fast can you race at different elevations?</h1>
-	
-	<div class ="calcu"><!--beginning of calculator-->
-	<div id ="title"><h3> Altitude Performance Conversion Calculator</h3></div>
+<h1> Welcome to TrackCalculator.com - The Home of Track Performance</h1>
+<!--end of menu
+<a href="{{url_for ('myfitnessprofile')}}">
+	<button class="feature-button" id="profile-button">
+		<span>View Your Fitness Profile</span>
+	</button>
+</a>
 
-		<form class="form-inline" >
-		<label for="Sex"> Sex:</label>
-		<select name="Sex" id="Sex" required>
-			<optgroup>
-				<!--<option value="none" selected disabled hidden>Select an Option</option>-->
-				<option value ="Male">Male</option>
-				<option 
-				value="Female">Female</option>
-				</select>
-				</optgroup>
-		<label for="Event"> Event:</label>
-		<select name="Event" id = "Event" required>
-			<optgroup>
-			<!--<option value="none" selected disabled hidden>Select an Option</option>-->
-			<option value = "800m">800m</option>
-			<option value= "Mile">Mile</option>
-			<option value= "3000m">3000m</option>
-			<option value="5000m">5000m</option>
-			<option value="10000m">10000m</option>
-			<option value="Half Marathon">Half Marathon</option>
-			<option value="Marathon">Marathon</option>
-			
-			</select><br><br>
-			</optgroup>
-			Race time <br>
-		<label for="Hours">Hours:</label>
-		<input type="number" id="Hours"  name="Hours" value= "0" min="0" max="59" required="required">
-		<label for="Minutes">Minutes:</label>
-		<input type="number" id="Minutes" name="Minutes" min="0" max="59" required="required">
-		<label for="Seconds">Seconds:</label>
-		<input type="number" step="0.01" id="Seconds" name="Seconds" min="0" max="59.99" required="required" ><br><br>
-		Ran at an elevation of:<br>
-		<!--<label for="Elevation"></label>-->
-		<input type="number" id="Elevation"  name="Elevation" min="1" required="required">
-		<label for ="Units"> Units:</label>
-		<select id="Units" name="Units" required>
-		<optgroup>
-		<!--<option value="none" selected disabled hidden>Select an Option</option>-->
-		<option value="Meters">Meters</option>
-		<option value="Feet">Feet</option>
-		</select>
-		</optgroup>
-<br><br>
-		<label for="Prediction_Elevation">Prediction Elevation:</label>
-		<input type="number" id="Prediction_Elevation"  name="Prediction_Elevation" min="1" required="required">
+<a href="{{url_for ('splits')}}">
+	<button class="feature-button" id="splits-button">
+		<span>Calculate Your Race Splits</span>
+	</button>
+</a>
 
-		
-		<input type="submit" id="calculate" value="Calculate"/>
-		<!--<button type="submit" >Calculate</button>-->
-		<br><br>
-<!-- if the prediction output does not work, place it outside the </form> element-->
-<h4>	<div id="prediction">Predicted Time of: </div>
-			
-</h4>
+<a href="{{url_for ('altitude')}}">
+	<button class="feature-button" id="altitude-button">
+		<span>Altitude Conversion Calculator</span>
+	</button>
+</a>
+-->
 
-		<div id="sentence"></div>
-		</form>
+<div class="feature-button-container">
+    <a href="{{url_for ('myfitnessprofile')}}">
+        <button class="feature-button" id="profile-button">
+            <span>View Your Fitness Profile</span>
+        </button>
+    </a>
+    
+    <a href="{{url_for ('splits')}}">
+        <button class="feature-button" id="splits-button">
+            <span>Calculate Your Race Splits</span>
+        </button>
+    </a>
 
-
-	</div><!-- closes calculator-->
+    <a href="{{url_for ('altitude')}}">
+        <button class="feature-button" id="altitude-button">
+            <span>Altitude Conversion Calculator</span>
+        </button>
+    </a>
+</div>
 	<div id="Logo"> 
 
 	</div>
@@ -122,11 +100,13 @@
 		<footer>
 			<ul>
                 <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
                 <li><a href="{{url_for ('about')}}">About</a></li>
                 <li><a href="{{url_for ('contact')}}">Contact</a></li>
-				<li><a href="{{url_for ('splits')}}">Splits</a></li>
 			</ul>
-			<p> © 2023 Track Calculator. All rights reserved. 
+			<p> © 2025 Track Calculator. All rights reserved. 
 
 			</p>
 		</footer>
@@ -134,35 +114,7 @@
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script type="text/javascript"> 
-$(document).ready(function() {
-	$('form').on('submit',function(event) {
-      $.ajax({
-        data:{
-          Sex : $("#Sex").val(),
-		  Event : $("#Event").val(),
-		  Hours : $("#Hours").val(),
-		  Minutes : $("#Minutes").val(),
-		  Seconds : $("#Seconds").val(),
-		  Elevation : $("#Elevation").val(),
-		  Units : $("#Units").val(),
-		  Prediction_Elevation : $("#Prediction_Elevation").val(),
-        },
-		type:'POST',
-        url:"{{ url_for('predict') }}",
-    	})//closes ajax function
-	.done(function(response){
-   	   $('#prediction').text(response.prediction).show();
-	   $('#sentence').text(response.sentence).show();
-	});
-	event.preventDefault();
-  	});
 
-});//closes document submit function
-
-
-
-</script>
 
  
 </html>
