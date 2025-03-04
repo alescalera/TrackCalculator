@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 #importing function for calculations
 import datetime
-from new_calculator import alt_calc
-from split_calculator import split_calc
+from api.new_calculator import alt_calc
+from api.split_calculator import split_calc
 
 #Define route for google ads.txt file
 @app.route("/ads.txt")
