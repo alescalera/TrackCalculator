@@ -12,7 +12,27 @@ from new_calculator import alt_calc
 @app.route('/')
 def home():
 	return render_template('index.html')
+<<<<<<< Updated upstream
 	
+=======
+@app.route('/about/')
+def about():
+    return render_template('about.html')    
+@app.route('/contact/')
+def contact():
+    return render_template('contact.html')	
+@app.route('/splits/')
+def splits():
+    return render_template('splits.html')	
+@app.route('/altitude/')
+def altitude():
+    return render_template('altitude.html')	
+@app.route('/myfitnessprofile/')
+def myfitnessprofile():
+    return render_template('my_fitnessprofile.html')	
+
+#Define altitude calculator	route
+>>>>>>> Stashed changes
 @app.route('/',methods=['POST'])
 def predict():
 	

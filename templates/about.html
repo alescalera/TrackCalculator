@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5MKDZ935J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y5MKDZ935J');
+</script>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" href="../static/css/tracksite.css"/>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16x16.png">
+	<link rel="manifest" href="/static/icons/site.webmanifest">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="How TrackCalculator.com was created">
+	<meta name="keywords" content="How was trackcalculator.com made?, How was the altitude performance conversion calculator made, altitude race prediction data, TFRRS results database
+	, track calculator, How was the NCAA conversion calculator made?>
+	<meta name="author" content="Albaro Escalera">
+<!-- notes* id is for css name is for server-->
+
+ 
+<title> About TrackCalculator.com </title>
+
+</head>
+<body>
+
+	
+		<div class="menu"><!--beginning of menu-->
+            <ul>
+				<li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
+                <li><a href="{{url_for ('about')}}">About</a></li>
+                <li><a href="{{url_for ('contact')}}">Contact</a></li>
+				
+            </ul>
+        </div><!--end of menu-->
+		
+<div class="about">
+<h1> The Author</h1>
+<div class="textbox">	
+<embed src="../static/css/author.txt" width="380">
+</div>
+<div class="textbox">	
+<h1> TrackCalculator.com </h1>
+<embed src="../static/css/trackcalculator.txt" width="380" height="100">
+</div>
+<div class="textbox">	
+<h1> The Altitude Performance Converison Calculator</h1>
+<embed src="../static/css/altcalc.txt" width="380">
+</div>
+</div>
+	<div id="AboutLogo"> 
+
+	</div>
+	
+	<div id="footer">
+			<hr>
+		<footer>
+			<ul>
+                <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
+                <li><a href="{{url_for ('about')}}">About</a></li>
+                <li><a href="{{url_for ('contact')}}">Contact</a></li>
+
+			</ul>
+			<p> © 2025 Track Calculator. All rights reserved. 
+
+			</p>
+		</footer>
+    </div> <!-- closes footer id-->
+      
+</body>
+
+</html>

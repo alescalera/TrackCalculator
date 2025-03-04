@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5MKDZ935J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y5MKDZ935J');
+</script>
+	<meta charset = "utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tracksite.css') }}"/>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='icons/site.webmanifest') }}">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="The World's First Race Prediction Calculator For Different Elevations">
+	<meta name="keywords" content="split calculator, splits calculator, pace calculator, running pace calculator, running calculator, race calculator,
+	track calculator, race splits calculator">
+	<meta name="author" content="Albaro Escalera">
+<!-- notes* id is for css name is for server-->
+<style>
+
+ </style>
+ 
+<title> Running Splits Calculator </title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+
+</head>
+<body>
+
+	
+		<div class="menu"><!--beginning of menu-->
+            <ul>
+                <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
+                <li><a href="{{url_for ('about')}}">About</a></li>
+                <li><a href="{{url_for ('contact')}}">Contact</a></li>
+            </ul>
+        </div><!--end of menu-->
+		
+
+<h1> Calculate Your Race Splits</h1>
+	
+	<div class ="calcu_splits"><!--beginning of calculator-->
+	<div id ="title"><h3> Running Pace/Splits Calculator</h3></div>
+	
+
+	<form class="form-inline" >
+		Race Time <br>
+		<label for="Hours">Hours:</label>
+		<input type="number" id="Hours"  name="Hours" value= "0" min="0" max="59" required="required">
+		<label for="Minutes">Minutes:</label>
+		<input type="number" id="Minutes" name="Minutes" min="0" max="59" required="required">
+		<label for="Seconds">Seconds:</label>
+		<input type="number" step="0.01" id="Seconds" name="Seconds" min="0" max="59.99" required="required" >
+		<br><br>
+		
+		Race Distance <br>
+		<input type="number" step="0.01" id="Race_Distance" name="Race_Distance" min="0.01" max="10000" required="required" >		
+		<label for="Race_Units"> Units:</label>
+		<select name="Race_Units" id="Race_Units" required>
+		
+			<optgroup>
+			<option value ="Meters">Meters</option>
+			<option value="Kilometers">Kilometers</option>
+			<option value="Miles">Miles</option>
+			</select>
+			</optgroup>
+		<br><br>
+		Split Distance <br>
+		<input type="number" step="0.01" id="Split_Distance" name="Split_Distance" min="0.01" max="10000" required="required" >		
+		<label for="Split_Units"> Units:</label>
+		<select name="Split_Units" id="Split_Units" required>		
+			<optgroup>
+			<option value ="Meters">Meters</option>
+			<option value="Kilometers">Kilometers</option>
+			<option value="Miles">Miles</option>
+			</select>
+			</optgroup>
+		<br><br>
+		<input type="submit" id="calculate" value="Calculate"/>
+		<br><br>
+<!-- if the prediction output does not work, place it outside the </form> element-->
+<h4>	<div id="prediction">Split of: </div>
+			
+</h4>
+		<div id="sentence"></div>
+		</form>
+
+		
+	</div><!-- closes calculator-->
+	<div id="Logo"> 
+
+	</div>
+	
+	<div id="footer">
+			<hr>
+		<footer>
+			<ul>
+                <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
+                <li><a href="{{url_for ('about')}}">About</a></li>
+                <li><a href="{{url_for ('contact')}}">Contact</a></li>
+
+			</ul>
+			<p> © 2025 Track Calculator. All rights reserved. 
+
+			</p>
+		</footer>
+    </div> <!-- closes footer id-->
+      
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function() {
+	$('form').on('submit',function(event) {
+      $.ajax({
+        data:{
+		  Hours : $("#Hours").val(),
+		  Minutes : $("#Minutes").val(),
+		  Seconds : $("#Seconds").val(),
+		  Race_Distance : $("#Race_Distance").val(),
+		  Race_Units : $("#Race_Units").val(),
+		  Split_Distance : $("#Split_Distance").val(),
+		  Split_Units : $("#Split_Units").val(),
+		},  
+		type:'POST',
+        url:"{{ url_for('splitsform') }}",
+    	})//closes ajax function
+	.done(function(response){
+   	   $('#prediction').text(response.split).show();
+	   $('#sentence').text(response.splitphrase).show();
+	});
+	event.preventDefault();
+  	});
+
+});//closes document submit function
+
+
+
+</script>
+</html>

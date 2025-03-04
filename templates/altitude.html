@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="XigAjGHD1dOSpgqlYlRlrzZfTtpDwjqKQhzMHbJsp3U" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5MKDZ935J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y5MKDZ935J');
+</script>
+	<meta charset = "utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tracksite.css') }}"/>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='icons/site.webmanifest') }}">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="The World's First Race Prediction Calculator For Different Elevations">
+	<meta name="keywords" content="altitude race prediction, altitude race converter, high altitude track calculator, altitude race prediction calculator,
+	,sea level race prediction, NCAA conversion calculator, high altitude race converter, altitude track race conversion">
+	<meta name="author" content="Albaro Escalera">
+<!-- notes* id is for css name is for server-->
+<style>
+
+
+ </style>
+ 
+<title> TrackCalculator.com - The Home of Track Performance </title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+
+</head>
+<body>
+
+	
+		<div class="menu"><!--beginning of menu-->
+            <ul>
+                <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
+                <li><a href="{{url_for ('about')}}">About</a></li>
+                <li><a href="{{url_for ('contact')}}">Contact</a></li>
+				
+				
+            </ul>
+        </div><!--end of menu-->
+		
+
+<h1> The World's Most Accurate Altitude Calculator</h1>
+	
+	<div class ="calcu_altitude"><!--beginning of calculator-->
+	<div id ="title"><h3> Altitude Performance Conversion Calculator</h3></div>
+
+		<form class="form-inline" >
+		<label for="Sex"> Sex:</label>
+		<select name="Sex" id="Sex" required>
+			<optgroup>
+				<!--<option value="none" selected disabled hidden>Select an Option</option>-->
+				<option value ="Male">Male</option>
+				<option 
+				value="Female">Female</option>
+				</select>
+				</optgroup>
+		<label for="Event"> Event:</label>
+		<select name="Event" id = "Event" required>
+			<optgroup>
+			<!--<option value="none" selected disabled hidden>Select an Option</option>-->
+			<option value = "800m">800m</option>
+			<option value= "Mile">Mile</option>
+			<option value= "3000m">3000m</option>
+			<option value="5000m">5000m</option>
+			<option value="10000m">10000m</option>
+			<option value="Half Marathon">Half Marathon</option>
+			<option value="Marathon">Marathon</option>
+			
+			</select><br><br>
+			</optgroup>
+			Race time <br>
+		<label for="Hours">Hours:</label>
+		<input type="number" id="Hours"  name="Hours" value= "0" min="0" max="59" required="required">
+		<label for="Minutes">Minutes:</label>
+		<input type="number" id="Minutes" name="Minutes" min="0" max="59" required="required">
+		<label for="Seconds">Seconds:</label>
+		<input type="number" step="0.01" id="Seconds" name="Seconds" min="0" max="59.99" required="required" ><br><br>
+		Ran at an elevation of:<br>
+		<!--<label for="Elevation"></label>-->
+		<input type="number" id="Elevation"  name="Elevation" min="1" required="required">
+		<label for ="Units"> Units:</label>
+		<select id="Units" name="Units" required>
+		<optgroup>
+		<!--<option value="none" selected disabled hidden>Select an Option</option>-->
+		<option value="Meters">Meters</option>
+		<option value="Feet">Feet</option>
+		</select>
+		</optgroup>
+<br><br>
+		<label for="Prediction_Elevation">Prediction Elevation:</label>
+		<input type="number" id="Prediction_Elevation"  name="Prediction_Elevation" min="1" required="required">
+
+		
+		<input type="submit" id="calculate" value="Calculate"/>
+		<!--<button type="submit" >Calculate</button>-->
+		<br><br>
+<!-- if the prediction output does not work, place it outside the </form> element-->
+<h4>	<div id="prediction">Predicted Time of: </div>
+			
+</h4>
+
+		<div id="sentence"></div>
+		</form>
+
+
+	</div><!-- closes calculator-->
+	<div id="Logo"> 
+
+	</div>
+	
+	<div id="footer">
+			<hr>
+		<footer>
+			<ul>
+                <li><a href="{{url_for ('home')}}">Home</a></li>
+				<li><a href="{{url_for ('myfitnessprofile')}}">MyFitnessProfile</a></li>
+				<li><a href="{{url_for ('splits')}}">Splits</a></li>
+				<li><a href="{{url_for ('altitude')}}">Altitude</a></li>
+                <li><a href="{{url_for ('about')}}">About</a></li>
+                <li><a href="{{url_for ('contact')}}">Contact</a></li>
+			</ul>
+			<p> © 2025 Track Calculator. All rights reserved. 
+
+			</p>
+		</footer>
+    </div> <!-- closes footer id-->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function() {
+	$('form').on('submit',function(event) {
+      $.ajax({
+        data:{
+          Sex : $("#Sex").val(),
+		  Event : $("#Event").val(),
+		  Hours : $("#Hours").val(),
+		  Minutes : $("#Minutes").val(),
+		  Seconds : $("#Seconds").val(),
+		  Elevation : $("#Elevation").val(),
+		  Units : $("#Units").val(),
+		  Prediction_Elevation : $("#Prediction_Elevation").val(),
+        },
+		type:'POST',
+        url:"{{ url_for('predict') }}",
+    	})//closes ajax function
+	.done(function(response){
+   	   $('#prediction').text(response.prediction).show();
+	   $('#sentence').text(response.sentence).show();
+	});
+	event.preventDefault();
+  	});
+
+});//closes document submit function
+
+
+
+</script>
+
+ 
+</html>
