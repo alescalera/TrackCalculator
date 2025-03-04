@@ -2,4 +2,4 @@
 # Make sure that it always contains an object named 'app'
 # Which is the main Flask instance
 
-from app import app
+# from app import app
